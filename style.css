@@ -1,3 +1,12 @@
+:root {
+    --primary-color: coral;
+    --secondary-color: chocolate;
+    --light-white: #F4F4F4;
+    --dark-grey: #333;
+    --dark-white: #e0e0e0;
+    --light-grey: #E7E7E7;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +15,7 @@
 
 html,
 body {
-    background: #F4F4F4;
+    background: var(--light-white);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -15,24 +24,24 @@ body {
 }
 
 #navbar ul li {
-    color: #333;
+    color: var(--dark-grey);
     display: inline-block;
     padding: 1rem;
     position: relative;
 }
 
 #navbar ul li a {
-    color: #333;
+    color: var(--dark-grey);
     text-decoration: none;
 }
 
 #navbar ul li:hover {
     cursor: pointer;
-    background: coral;
+    background: var(--primary-color);
 }
 
 #navbar ul li:hover a {
-    color: #F4F4F4;
+    color: var(--light-white);
 }
 
 /* Ocultar sub-menus */
@@ -51,22 +60,22 @@ body {
 
 #navbar ul li:hover ul li {
     display: block;
-    background: #E7E7E7;
+    background: var(--light-grey);
 }
 
 #navbar ul li:hover ul li a {
-    color: #333;
+    color: var(--dark-grey);
 }
 
 #navbar ul li:hover ul li:hover {
-    background: #e0e0e0;
+    background: var(--dark-white);
     color: inherit;
 }
 
 #navbar ul li:hover ul li span {
     float: right;
-    color: #f4f4f4;
-    background: coral;
+    color: var(--light-white);
+    background: var(--primary-color);
     padding: 0.2rem 0.5rem;
     text-align: center;
     font-size: 0.8rem;
@@ -74,5 +83,33 @@ body {
 }
 
 #navbar ul li:hover ul li:hover span {
-    background: chocolate;
+    background: var(--secondary-color);
+}
+
+#showcase {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3rem);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+    background: var(--primary-color);
+}
+
+#showcase h1 {
+    color: var(--light-white);
+    font-size: 4rem;
+}
+
+@media(max-width: 520px) {
+    
+    #navbar ul li {
+        display: block;
+    }
+
+    #navbar ul li:hover ul {
+        width: 100%;
+        position: relative;
+    }
 }
